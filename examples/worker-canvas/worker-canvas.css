@@ -1,0 +1,41 @@
+canvas {
+    border: solid black 1px;
+    margin-right: 10px;
+    float: left;
+}
+
+textarea {
+    display: block;
+    margin: 0px;
+}
+
+#container {
+    width: 835px;
+    height: 100%;
+    border-left: solid grey 1px;
+    border-right: solid grey 1px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 16px;
+    position: relative;
+    overflow: hidden;
+}
+
+body {
+    font-family: sans-serif;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 95%;
+}
+
+.title {
+    font-size: small;
+    font-weight: bold;
+}
+
+.desc {
+    font-size: small;
+}
