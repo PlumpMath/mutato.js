@@ -2,7 +2,7 @@
 
 importScripts('canvas-emitter.js');
 
-postMessage({
+self.postMessage({
 	type: 'idle'
 });
 
@@ -15,12 +15,12 @@ self.onmessage = function (ev) {
 			// the master will kill this worker if it does not respond within a second or so
 			var fun = new Function(data.text);
 			var ret = fun();
-			postMessage({
+			self.postMessage({
 				type: 'return',
 				value: ret
 			});
 		} catch (e) {
-			postMessage({
+			self.postMessage({
 				type: 'exception',
 				value: e
 			});

@@ -5,7 +5,7 @@ var con;
 
 	function createMethod(object, name) {
 		object[name] = function () {
-			postMessage({
+			self.postMessage({
 				method: name,
 				args: Array.prototype.slice.call(arguments, 0)
 			});
@@ -15,7 +15,7 @@ var con;
 	function createAccessor(object, propertyName) {
 		Object.defineProperty(object, propertyName, {
 			set: function (value) {
-				postMessage({
+				self.postMessage({
 					property: propertyName,
 					value: value
 				});
