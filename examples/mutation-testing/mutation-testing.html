@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="mutation-testing.css">
+    <title>mutato.js - mutation testing</title>
+</head>
+<body ng-app="app">
+    <div id="container" ng-controller="TextController">
+        <span class="title">mutato.js</span><br>
+        <span class="desc">Mutates the code and runs the unit tests for it<br>Infinite loops which may be the result of repeated mutation are not an issue since the code and the unit tests are executed in a web worker.</span>
+        <br><br>
+        <div>
+            <textarea ng-model="data.source" rows="24" cols="74"></textarea>
+            <textarea ng-model="data.tests" rows="24" cols="74"></textarea>
+            <textarea ng-model="data.result" rows="24" cols="30"></textarea>
+        </div>
+        <br>
+        <button ng-click="mutate()">Mutate</button>
+        <button ng-click="reset()">Reset</button>
+        <button ng-click="exec()">Exec</button>
+    </div>
+
+
+    <script src="../lib/angular.min.js"></script>
+
+    <script src="../../lib/esprima.js"></script>
+    <script src="../../lib/escodegen.browser.js"></script>
+
+    <script src="../../src/mutato.js"></script>
+    <script src="../../src/seal.js"></script>
+
+    <script src="mutation-testing.js"></script>
+</body>
+</html>
